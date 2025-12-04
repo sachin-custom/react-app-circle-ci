@@ -1,0 +1,12 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      image: "cmg/node"
+    steps:
+    - checkout
+    - run: "ecos hello world"
+
+workflows:
+  ny_workflow:
+    build
