@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: "cmg/node"
+      - image: cmg/image:current
     steps:
       - checkout
       - run: "echo hello world"
