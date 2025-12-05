@@ -9,4 +9,5 @@ jobs:
 
 workflows:
   ny_workflow:
-    build
+    jobs:
+      - build
