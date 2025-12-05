@@ -3,13 +3,14 @@ version: 2.1
 jobs:
   build:
     docker:
-      image: cimg/node:20
+      - image: cimg/node:20
     
     steps:
       - checkout
       - run: 
-          command: "eco hello world"
+          command: "echo hello world"
 
 workflows:
   myworkflow:
-    build
+    jobs:
+      - build
