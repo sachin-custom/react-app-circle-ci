@@ -2,12 +2,21 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/node
+      - image: cimg/node:19.7.0
     steps:
       - checkout
-      - run: "echo hello world"
+      - run: "npm run build"
+  test:
+    docker:
+      - image: cimg/node:19.7.0
+    steps:
+      - checkout
+      - run: "npm run test" 
 
 workflows:
   ny_workflow:
     jobs:
       - build
+      - test:
+          requires:
+            build
