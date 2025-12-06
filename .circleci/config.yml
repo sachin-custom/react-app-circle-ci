@@ -14,6 +14,12 @@ jobs:
       - checkout
       - run: "npm install"
       - run: "npm run test" 
+  deploy:
+    docker:
+      - image: cimg/node:19.7.0 
+    steps:
+      - run: docker built -t sachinjondhale278/react-circle-ci:1.0 .
+      - run: docker push sachinjondhale278/react-circle-ci:1.0     
 
 workflows:
   ny_workflow:
@@ -22,3 +28,6 @@ workflows:
       - test:
           requires:
             - build
+      - deploy:
+          requires:
+            - test      
