@@ -15,8 +15,8 @@ jobs:
       - run: "npm install"
       - run: "npm run test" 
   deploy:
-    docker:
-      - image: cimg/node:19.7.0 
+    machine:
+      - image: ubuntu-2204:2023.04.2
     steps:
       - checkout
       - run: echo "${DOCKER_PASSWORD}" | docker login -u "$DOCKER_USERNAME" --password-stdin
