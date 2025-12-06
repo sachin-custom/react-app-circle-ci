@@ -4,6 +4,6 @@ WORKDIR /react-circleci
 
 COPY . .
 
-RUN "npm i"
+RUN "npm install"
 
 CMD ["npm","start"]
