@@ -5,12 +5,14 @@ jobs:
       - image: cimg/node:19.7.0
     steps:
       - checkout
+      - run: "npm install"
       - run: "npm run build"
   test:
     docker:
       - image: cimg/node:19.7.0
     steps:
       - checkout
+      - run: "npm install"
       - run: "npm run test" 
 
 workflows:
