@@ -16,7 +16,7 @@ jobs:
       - run: "npm run test" 
   deploy:
     machine:
-      - image: ubuntu-2204:2023.04.2
+      image: ubuntu-2204:2023.04.2
     steps:
       - checkout
       - run: echo "${DOCKER_PASSWORD}" | docker login -u "$DOCKER_USERNAME" --password-stdin
