@@ -18,7 +18,7 @@ jobs:
     docker:
       - image: cimg/node:19.7.0 
     steps:
-      - run: docker build -t sachinjondhale278/react-circle-ci:1.0 .
+      - run: docker build . -t sachinjondhale278/react-circle-ci:1.0
       - run: docker push sachinjondhale278/react-circle-ci:1.0     
 
 workflows:
